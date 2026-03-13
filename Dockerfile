@@ -1,6 +1,5 @@
 FROM python:3.12-slim
 
-# 한글 폰트 + ODA 의존성 + xvfb (ODA GUI 억제용)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         fonts-noto-cjk \
@@ -13,7 +12,7 @@ RUN apt-get update && \
         libxcb-icccm4 \
         libxcb-image0 \
         libxkbcommon-x11-0 \
-        libgl1-mesa-glx \
+        libgl1 \
         libegl1 \
         curl && \
     rm -rf /var/lib/apt/lists/*
